@@ -1,0 +1,1 @@
+<span class="mt-3 text-secondary"><?php echo $_SESSION['email']; ?></span>
