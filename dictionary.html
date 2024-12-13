@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Playlist</title>
+<style>
+  .video, .playlist{display: inline-block;}
+  .top{
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    
+  }
+  .video, .playlist{
+    height: 70vh;
+  }
+  .video, .playlist{margin: 10px}
+  @media screen and (max-width: 600px) {
+    .playlist, .video{
+      display: block;
+    }
+    .top{
+      display: block;
+    }
+  }
+
+  h2{background-color: #1eaaf1; margin: 0; text-align: center; padding: 20px; color: white;}
+  .playlist-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #f0f0f0;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+</style>
+</head>
+<body>
+  <div class="top">
+    <div class="video" style="border: solid #1eaaf1 1px;">
+      <iframe id="video-player" src="https://www.youtube.com/embed/oMBwlviBIkc?si=OswzIcc9M1XuExv_" frameborder="0" allowfullscreen></iframe>
+    </div>
+  <div class="playlist" style="border: solid #1eaaf1 1px;">
+    <h2>Curriclum</h2>
+    <div class="playlist-container">
+      <div class="playlist-item" data-video="https://www.youtube.com/embed/oMBwlviBIkc?si=OswzIcc9M1XuExv_">
+        <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/YOUR_YOUTUBE_VIDEO_ID_1/mqdefault.jpg');"></div>
+        <p>Video 1</p>
+      </div>
+      <div class="playlist-item" data-video="https://www.youtube.com/embed/oMBwlviBIkc?si=OswzIcc9M1XuExv_">
+        <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/YOUR_YOUTUBE_VIDEO_ID_2/mqdefault.jpg');"></div>
+        <p>Video 2</p>
+      </div>
+      <div class="playlist-item" data-video="https://www.youtube.com/embed/oMBwlviBIkc?si=OswzIcc9M1XuExv_">
+        <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/YOUR_YOUTUBE_VIDEO_ID_3/mqdefault.jpg');"></div>
+        <p>Video 3</p>
+      </div>
+      
+    </div>
+  </div>
+  </div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const playlistItems = document.querySelectorAll(".playlist-item");
+  const videoPlayer = document.getElementById("video-player");
+
+  playlistItems.forEach(item => {
+    item.addEventListener("click", function() {
+      const videoSrc = this.getAttribute("data-video");
+      videoPlayer.setAttribute("src", `${videoSrc}`);
+    });
+  });
+});
+</script>
+</body>
+</html>

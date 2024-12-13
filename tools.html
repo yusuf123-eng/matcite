@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Past Questions</title>
+  
+  <link rel="stylesheet" href="css/radio/whitemode.css">
+<head> <link rel="icon" href="search.jpg" type="image/jpg"> <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SHXY0N529Y"></script>
+  <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-SHXY0N529Y'); </script>  
+<style>
+  .btn:hover {
+    background-color: #1eaaf1 !important;
+    color: white !important;
+    border: solid white 1px !important;
+  }
+  body{
+    overflow-x: hidden;
+  }
+</style>
+<body>
+
+<div class="container">
+  <a class="" href="index.php" title="matcite" style="color: black; font-size: 20px; margin-left: 15px; text-decoration: none;">
+              
+    <span><b style="font-family: spacex; color: #1eaaf1;"><span style="font-size: xx-large; color: black;"></span>MAT<span style="color: black;">CITE</span></b></span>
+    
+    
+  </a> 
+  <h2>Select Past Question Type</h2>
+
+  <ul>
+    <li>
+      <input type="radio" id="a1-option" name="selector" onclick="selectUniversity('tools/jamb')">
+      <label for="a1-option">Jamb</label>
+      <div class="check"></div>
+    </li>
+
+    <li>
+      <input type="radio" id="b2-option" name="selector" onclick="selectUniversity('tools/waec')">
+      <label for="b2-option">Waec</label>
+      <div class="check"><div class="inside"></div></div>
+    </li>
+
+    <li>
+      <input type="radio" id="c3-option" name="selector" onclick="selectUniversity('comingsoon')">
+      <label for="c3-option">Neco</label>
+      <div class="check"><div class="inside"></div></div>
+    </li>
+    <li>
+      <input type="radio" id="c4-option" name="selector" onclick="selectUniversity('tools/university')">
+      <label for="c4-option">University Past Questions</label>
+      <div class="check"></div>
+    </li>
+
+    <li>
+      <input type="radio" id="c5-option" name="selector" onclick="selectUniversity('matbot')">
+      <label for="c5-option">CBT</label>
+      <div class="check"><div class="inside"></div></div>
+    </li>
+
+    
+
+    <!-- <li>
+      <input type="radio" id="t-option" name="selector" onclick="selectUniversity('pastquestions/other')">
+      <label for="t-option">Other</label>
+      <div class="check"><div class="inside"></div></div>
+    </li> -->
+  </ul>
+
+  <button class="btn" type="submit" style="background-color: white; color: #1eaaf1; padding: 20px 220px; border: solid #1eaaf1 1px; margin-top: 50px; font-weight: 300; font-size: 1.35em;" onclick="navigate()">ENTER</button>
+
+</div>
+
+<!-- Script to redirect to different pages -->
+<script>
+  function selectUniversity(university) {
+    window.selectedUniversity = university;
+  }
+
+  function navigate() {
+    if (window.selectedUniversity) {
+      window.location.href = window.selectedUniversity + ".html";
+    } else {
+      alert("Please select the type Past Question");
+    }
+  }
+</script>
+
+</body>
+</html>
